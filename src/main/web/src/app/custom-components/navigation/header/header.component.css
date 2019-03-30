@@ -1,0 +1,42 @@
+.logo {
+  width: 60%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: lightgray;
+}
+
+.navigation-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-item {
+  border: solid 2px white;
+  border-radius: 10px;
+}
+
+.navigation-item__padding {
+  padding: 10px;
+}
+
+.navigation-item:hover,
+.navigation-item__loged-user:hover,
+.navigation-item:active
+.navigation-item__loged-user:active {
+  background-color: white;
+  color: #3f51b5!important;
+}
+
+.menu-button {
+  font-size: inherit;
+}

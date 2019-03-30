@@ -1,0 +1,29 @@
+<mat-nav-list>
+    <a class="highlighed" mat-list-item routerLink="/login" (click)="onClose()">
+      <mat-icon>input</mat-icon>
+      <span class="nav-caption">Zaloguj się</span>
+    </a>
+    <a mat-list-item routerLink="/favorite" (click)="onClose()">
+      <mat-icon class="favorite-icon">star</mat-icon>
+      <span class="nav-caption">Ulubione</span>
+    </a>
+    <a mat-list-item routerLink="/history" (click)="onClose()">
+      <mat-icon>history</mat-icon>
+      <span class="nav-caption">Historia</span>
+    </a>
+    <a mat-list-item routerLink="/feedback" (click)="onClose()">
+      <mat-icon class="feedback-icon">feedback</mat-icon>
+      <span class="nav-caption">Opinie</span>
+    </a>
+    <a mat-list-item routerLink="/help" (click)="onClose()">
+      <mat-icon class="info-icon">info</mat-icon>
+      <span class="nav-caption">Potrzebujesz pomocy?</span>
+    </a>
+    <mat-list-item class= "highlighed">
+      <button mat-icon-button (click)="onClose()">
+        <mat-icon>reply</mat-icon>
+        <span class="nav-caption">Wyloguj się</span>
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
+  
