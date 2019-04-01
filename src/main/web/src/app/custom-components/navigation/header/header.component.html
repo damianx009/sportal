@@ -5,7 +5,7 @@
         </a>
     </div>
     <div fxFlex fxLayout fxLayoutAlign="flex-end center" fxHide.gt-xs>
-      <mat-icon>account_circle</mat-icon>
+      <mat-icon *ngIf="authService.userLoggedIn">account_circle</mat-icon>
       <button mat-icon-button (click)="onToggleSidenav()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -15,10 +15,10 @@
         <li>
           <a routerLink="/help">Pomoc</a>
         </li>
-        <li>
+        <li *ngIf="!authService.userLoggedIn">
           <a class="navigation-item navigation-item__padding" routerLink="/login">Zaloguj się</a>
         </li>
-        <li>
+        <li *ngIf="authService.userLoggedIn">
             <button mat-button [matMenuTriggerFor]="menu" class="menu-button navigation-item">
                 <mat-icon>account_circle</mat-icon>
                 <span> xXxAdam69xXx</span>
@@ -41,7 +41,7 @@
                 <mat-icon>feedback</mat-icon>
                 <span>Opinie</span>
               </button>
-              <button mat-menu-item>
+              <button mat-menu-item (click)="authService.logout()">
                   <mat-icon>reply</mat-icon>
                   <span>Wyloguj się</span>
                 </button>

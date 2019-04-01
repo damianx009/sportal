@@ -3,10 +3,35 @@
 
 
 html, body {
-    font-family: 'Roboto', sans-serif;
-    height: 100%;
-  }
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
   
-  body {
-    margin: 0;
+body {
+  margin: 0;
+}
+
+
+.snack-primary-theme {
+  color: #3f51b5;
+  background-color: white;
+  border: solid 2px #3f51b5;
+}
+
+.snack-primary-theme .mat-simple-snackbar-action {
+  color: #3f51b5;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+.blink_me {
+  animation: blinker 1s linear 1;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
+}

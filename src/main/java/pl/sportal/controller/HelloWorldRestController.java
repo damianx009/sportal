@@ -10,4 +10,9 @@ public class HelloWorldRestController {
     public String getWelcomeMessage() {
         return "Siema świrze";
     }
+
+    @GetMapping("/public/hello")
+    public String elo() {
+        return "eldoka";
+    }
 }

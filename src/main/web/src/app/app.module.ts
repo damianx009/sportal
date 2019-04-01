@@ -11,6 +11,10 @@ import { PageNotFoundComponent } from './custom-components/page-not-found/page-n
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './custom-components/navigation/header/header.component';
 import { SidenavListComponent } from './custom-components/navigation/sidenav-list/sidenav-list.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from "angular2-cookie/services/cookies.service";
+
 
 @NgModule({
   declarations: [
@@ -24,11 +28,13 @@ import { SidenavListComponent } from './custom-components/navigation/sidenav-lis
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

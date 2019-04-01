@@ -1,3 +1,30 @@
-<p>
-  login works!
-</p>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div class="login-form__container">
+    <h4>Logowanie</h4>
+    <div *ngIf="invalidCrudentials" id="invalid-crudential-alert" class="mat-error" style="font-size: 0.9rem" fxLayout fxLayoutAlign="left center">
+        <mat-icon>error</mat-icon>
+        <p>Nieprawidłowy login lub hasło.</p>
+    </div>
+    <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)"
+          fxLayout="column" fxLayoutAlign="center center">
+      <mat-form-field class="example-full-width">
+        <input matInput 
+              type="text" 
+              placeholder="Login" 
+              ngModel name="login" 
+              required>
+          <mat-error>Pole nie może być puste.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput 
+              type="password" 
+              placeholder="Hasło" 
+              ngModel 
+              name="password"
+              required>
+        <mat-error>Pole nie może być puste.</mat-error>
+      </mat-form-field>
+      <button [disabled]="f.invalid" mat-raised-button color="primary" type="submit">Zaloguj się</button>
+    </form>
+  </div>
+</div>
