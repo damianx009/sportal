@@ -19,8 +19,8 @@
       <mat-icon class="info-icon">info</mat-icon>
       <span class="nav-caption">Potrzebujesz pomocy?</span>
     </a>
-    <mat-list-item *ngIf="authService.userLoggedIn" class= "highlighed">
-      <button mat-icon-button (click)="onLogout()">
+    <mat-list-item *ngIf="authService.userLoggedIn" class= "highlighed" (click)="onLogout()">
+      <button mat-icon-button >
         <mat-icon>reply</mat-icon>
         <span class="nav-caption">Wyloguj się</span>
       </button>

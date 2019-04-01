@@ -421,7 +421,7 @@ module.exports = "a {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list>\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\n      <mat-icon>input</mat-icon>\n      <span class=\"nav-caption\">Zaloguj się</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\n      <span class=\"nav-caption\">Ulubione</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\n      <mat-icon>history</mat-icon>\n      <span class=\"nav-caption\">Historia</span>\n    </a>\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\n      <span class=\"nav-caption\">Opinie</span>\n    </a>\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\n      <mat-icon class=\"info-icon\">info</mat-icon>\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\n    </a>\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\">\n      <button mat-icon-button (click)=\"onLogout()\">\n        <mat-icon>reply</mat-icon>\n        <span class=\"nav-caption\">Wyloguj się</span>\n      </button>\n    </mat-list-item>\n  </mat-nav-list>\n  "
+module.exports = "<mat-nav-list>\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\n      <mat-icon>input</mat-icon>\n      <span class=\"nav-caption\">Zaloguj się</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\n      <span class=\"nav-caption\">Ulubione</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\n      <mat-icon>history</mat-icon>\n      <span class=\"nav-caption\">Historia</span>\n    </a>\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\n      <span class=\"nav-caption\">Opinie</span>\n    </a>\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\n      <mat-icon class=\"info-icon\">info</mat-icon>\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\n    </a>\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\" (click)=\"onLogout()\">\n      <button mat-icon-button >\n        <mat-icon>reply</mat-icon>\n        <span class=\"nav-caption\">Wyloguj się</span>\n      </button>\n    </mat-list-item>\n  </mat-nav-list>\n  "
 
 /***/ }),
 
@@ -452,6 +452,7 @@ var SidenavListComponent = /** @class */ (function () {
         this.closeSidenav.emit();
     };
     SidenavListComponent.prototype.onLogout = function () {
+        console.log('xdxd');
         this.onClose();
         this.authService.logout();
     };

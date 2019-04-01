@@ -19,6 +19,7 @@ export class SidenavListComponent implements OnInit {
   }
 
   onLogout() {
+    console.log('xdxd');
     this.onClose();
     this.authService.logout();
   }
