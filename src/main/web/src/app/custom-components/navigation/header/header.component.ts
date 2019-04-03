@@ -11,6 +11,14 @@ export class HeaderComponent implements OnInit {
   
   constructor(public authService: AuthenticateService) { }
   ngOnInit() {
+    const token = this.authService.getToken();
+
+    if(token) {
+      this.authService.checkToken()
+        .then(()=>{
+          this.authService.setUserLoggedIn(true);
+        });
+    }
   }
 
   onToggleSidenav() {

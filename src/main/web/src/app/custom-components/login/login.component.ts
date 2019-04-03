@@ -5,6 +5,7 @@ import { HttpResponse } from '@angular/common/http';
 import { AngularMaterialService } from 'src/app/services/angular-material.service';
 import { RouterService } from 'src/app/services/router.service';
 import { ViewActionService } from 'src/app/services/view-action.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,19 @@ import { ViewActionService } from 'src/app/services/view-action.service';
 export class LoginComponent implements OnInit {
 
   invalidCrudentials: boolean = false;
+  url: string;
 
   constructor(private authenticateService: AuthenticateService,
               private angularMaterialService: AngularMaterialService,
               private routerService: RouterService,
-              private viewActionService: ViewActionService) { }
+              private viewActionService: ViewActionService,
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
+    this.route.queryParamMap.subscribe(queryParams => {
+      this.url = queryParams.get("url");
+    });
   }
 
 
@@ -28,7 +35,11 @@ export class LoginComponent implements OnInit {
     this.authenticateService.login(form.value.login, form.value.password).then(
       (response: HttpResponse<any>) => {
         this.authenticateService.setUserLoggedIn(true);
-        this.routerService.redirectToRoot();
+        if (this.url) {
+          this.router.navigate([this.url]);
+        } else {
+          this.routerService.redirectToRoot();
+        }
         this.angularMaterialService.openSnackBar('Zostałeś zalogowany !');
       }
     ).catch(err=> {

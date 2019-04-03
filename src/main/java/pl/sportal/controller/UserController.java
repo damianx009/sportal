@@ -5,7 +5,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import pl.sportal.entity.ApplicationUser;
 
-@RestController
+import java.security.Principal;
+
+@CustomRestControllerAnnotation
 public class UserController {
 
 
@@ -17,5 +19,11 @@ public class UserController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         System.out.println(user.getUsername());
         System.out.println(user.getPassword());
+    }
+
+    @GetMapping("/protected/username")
+    @ResponseBody
+    public Principal currentUserName(Principal principal) {
+        return principal;
     }
 }

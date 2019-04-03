@@ -11,4 +11,12 @@ export class RouterService {
   redirectToRoot() {
     this.router.navigate(["/"]);
   }
+
+  redirectToLoginPage() {
+    this.router.navigate(["/login"]);
+  }
+
+  loginAndRedirectToUrl(url: string) {
+    this.router.navigate(["/login"], { queryParams: {url: url}});
+  }
 }

@@ -12,8 +12,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './custom-components/navigation/header/header.component';
 import { SidenavListComponent } from './custom-components/navigation/sidenav-list/sidenav-list.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from "angular2-cookie/services/cookies.service";
+import { HttpHeadersConfigInterceptor } from './interceptors/http-headers-config.interceptor';
+import { FaqComponent } from './custom-components/faq/faq.component';
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { CookieService } from "angular2-cookie/services/cookies.service";
     FooterComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import { CookieService } from "angular2-cookie/services/cookies.service";
     FlexLayoutModule,
     HttpClientModule
   ],
-  providers: [CookieService],
+  providers: [CookieService,
+              { provide: HTTP_INTERCEPTORS, useClass: HttpHeadersConfigInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

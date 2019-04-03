@@ -13,7 +13,7 @@
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
       <ul fxLayout fxLayoutGap="20px" class="navigation-items">
         <li>
-          <a routerLink="/help">Pomoc</a>
+          <a routerLink="/help" style="vertical-align: sub">Pomoc</a>
         </li>
         <li *ngIf="!authService.userLoggedIn">
           <a class="navigation-item navigation-item__padding" routerLink="/login">Zaloguj się</a>
