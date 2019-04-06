@@ -1,3 +1,7 @@
+.login-form {
+    padding: 0px 16px;
+}
+
 .login-form__container {
     border: solid 3px #3f51b5;
     margin-top: 10vh;
@@ -6,5 +10,12 @@
 }
 
 button {
+    width: 300px;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+mat-list-item div {
+    padding: 0!important;
 }

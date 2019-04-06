@@ -330,7 +330,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".login-form__container {\r\n    border: solid 3px #3f51b5;\r\n    margin-top: 10vh;\r\n    border-radius: 10px;\r\n    padding: 15px;\r\n}\r\n\r\nbutton {\r\n    margin-top: 10px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jdXN0b20tY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmxvZ2luLWZvcm1fX2NvbnRhaW5lciB7XHJcbiAgICBib3JkZXI6IHNvbGlkIDNweCAjM2Y1MWI1O1xyXG4gICAgbWFyZ2luLXRvcDogMTB2aDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBwYWRkaW5nOiAxNXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxufSJdfQ== */"
+module.exports = ".login-form {\r\n    padding: 0px 16px;\r\n}\r\n\r\n.login-form__container {\r\n    border: solid 3px #3f51b5;\r\n    margin-top: 10vh;\r\n    border-radius: 10px;\r\n    padding: 15px;\r\n}\r\n\r\nbutton {\r\n    width: 300px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n}\r\n\r\nmat-list-item div {\r\n    padding: 0!important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxZQUFZO0lBQ1osZ0JBQWdCO0lBQ2hCLG1CQUFtQjtBQUN2Qjs7QUFHQTtJQUNJLG9CQUFvQjtBQUN4QiIsImZpbGUiOiJzcmMvYXBwL2N1c3RvbS1jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9naW4tZm9ybSB7XHJcbiAgICBwYWRkaW5nOiAwcHggMTZweDtcclxufVxyXG5cclxuLmxvZ2luLWZvcm1fX2NvbnRhaW5lciB7XHJcbiAgICBib3JkZXI6IHNvbGlkIDNweCAjM2Y1MWI1O1xyXG4gICAgbWFyZ2luLXRvcDogMTB2aDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBwYWRkaW5nOiAxNXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgd2lkdGg6IDMwMHB4O1xyXG4gICAgbWFyZ2luLXRvcDogMTBweDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbn1cclxuXHJcblxyXG5tYXQtbGlzdC1pdGVtIGRpdiB7XHJcbiAgICBwYWRkaW5nOiAwIWltcG9ydGFudDtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -341,7 +341,7 @@ module.exports = ".login-form__container {\r\n    border: solid 3px #3f51b5;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <div class=\"login-form__container\">\n    <h4>Logowanie</h4>\n    <div *ngIf=\"invalidCrudentials\" id=\"invalid-crudential-alert\" class=\"mat-error\" style=\"font-size: 0.9rem\" fxLayout fxLayoutAlign=\"left center\">\n        <mat-icon>error</mat-icon>\n        <p>Nieprawidłowy login lub hasło.</p>\n    </div>\n    <form class=\"example-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\"\n          fxLayout=\"column\" fxLayoutAlign=\"center center\">\n      <mat-form-field class=\"example-full-width\">\n        <input matInput \n              type=\"text\" \n              placeholder=\"Login\" \n              ngModel name=\"login\" \n              required>\n          <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <mat-form-field class=\"example-full-width\">\n        <input matInput \n              type=\"password\" \n              placeholder=\"Hasło\" \n              ngModel \n              name=\"password\"\n              required>\n        <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Zaloguj się</button>\n    </form>\n  </div>\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <div class=\"login-form__container\">\n    <h4>Logowanie</h4>\n    <div *ngIf=\"invalidCrudentials\" id=\"invalid-crudential-alert\" class=\"mat-error\" style=\"font-size: 0.9rem\" fxLayout fxLayoutAlign=\"left center\">\n        <mat-icon>error</mat-icon>\n        <p>Nieprawidłowy login lub hasło.</p>\n    </div>\n    <form class=\"login-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\"\n          fxLayout=\"column\" >\n      <mat-form-field>\n        <input matInput \n              type=\"text\" \n              placeholder=\"Login\" \n              ngModel name=\"login\" \n              required>\n          <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <mat-form-field>\n        <input matInput \n              type=\"password\" \n              placeholder=\"Hasło\" \n              ngModel \n              name=\"password\"\n              required>\n        <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <mat-checkbox fxFlexAlign=\"left\" [(ngModel)]=\"rememberMe\" name=\"remebmerMeCheckbox\">Zapamiętaj mnie</mat-checkbox>\n        <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Zaloguj się</button>\n        <mat-divider></mat-divider>\n        <a mat-button routerLink=\"/login/recover\">Nie pamiętasz hasła?</a>  \n    </form>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -377,6 +377,7 @@ var LoginComponent = /** @class */ (function () {
         this.viewActionService = viewActionService;
         this.route = route;
         this.router = router;
+        this.rememberMe = false;
         this.invalidCrudentials = false;
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -387,8 +388,11 @@ var LoginComponent = /** @class */ (function () {
     };
     LoginComponent.prototype.onSubmit = function (form) {
         var _this = this;
-        this.authenticateService.login(form.value.login, form.value.password).then(function (response) {
+        this.authenticateService.login(form.value.login, form.value.password).then(function () {
             _this.authenticateService.setUserLoggedIn(true);
+            if (_this.rememberMe) {
+                _this.authenticateService.storeTokenInLocalStorage();
+            }
             if (_this.url) {
                 _this.router.navigate([_this.url]);
             }
@@ -443,7 +447,7 @@ module.exports = ".logo {\r\n  width: 60%;\r\n  display: inline-block;\r\n  vert
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <div>\n        <a routerLink=\"/\">\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\n        </a>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\n        <li>\n          <a routerLink=\"/help\" style=\"vertical-align: sub\">Pomoc</a>\n        </li>\n        <li *ngIf=\"!authService.userLoggedIn\">\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\n        </li>\n        <li *ngIf=\"authService.userLoggedIn\">\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\n                <mat-icon>account_circle</mat-icon>\n                <span> xXxAdam69xXx</span>\n                <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n              <button mat-menu-item>\n                <mat-icon>home</mat-icon>\n                <span>Strona główna</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>star</mat-icon>\n                <span>Ulubione</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>history</mat-icon>\n                <span>Historia</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>feedback</mat-icon>\n                <span>Opinie</span>\n              </button>\n              <button mat-menu-item (click)=\"authService.logout()\">\n                  <mat-icon>reply</mat-icon>\n                  <span>Wyloguj się</span>\n                </button>\n            </mat-menu>            \n        </li>\n      </ul>\n    </div>\n  </mat-toolbar>\n  "
+module.exports = "<mat-toolbar color=\"primary\">\n    <div>\n        <a routerLink=\"/\">\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\n        </a>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\n        <li>\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\n        </li>\n        <li *ngIf=\"!authService.userLoggedIn\">\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\n        </li>\n        <li *ngIf=\"authService.userLoggedIn\">\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\n                <mat-icon>account_circle</mat-icon>\n                <span> xXxAdam69xXx</span>\n                <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n              <button mat-menu-item>\n                <mat-icon>home</mat-icon>\n                <span>Strona główna</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>star</mat-icon>\n                <span>Ulubione</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>history</mat-icon>\n                <span>Historia</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>feedback</mat-icon>\n                <span>Opinie</span>\n              </button>\n              <button mat-menu-item (click)=\"authService.logout()\">\n                  <mat-icon>reply</mat-icon>\n                  <span>Wyloguj się</span>\n                </button>\n            </mat-menu>            \n        </li>\n      </ul>\n    </div>\n  </mat-toolbar>\n  "
 
 /***/ }),
 
@@ -722,12 +726,14 @@ var AngularMaterialModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"]],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDividerModule"]],
             exports: [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatFormFieldModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatInputModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"]]
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBarModule"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDividerModule"]]
         })
     ], AngularMaterialModule);
     return AngularMaterialModule;
@@ -824,13 +830,25 @@ var AuthenticateService = /** @class */ (function () {
         this.userLoggedIn = userLoggedIn;
     };
     AuthenticateService.prototype.logout = function () {
+        localStorage.removeItem('TOKEN');
         this.cookieService.remove('TOKEN');
         this.setUserLoggedIn(false);
         this.routerService.redirectToRoot();
         this.angularMaterialService.openSnackBar('Zostałeś wylogowany...');
     };
     AuthenticateService.prototype.getToken = function () {
-        return this.cookieService.get('TOKEN');
+        var token;
+        if (localStorage.getItem('TOKEN')) {
+            token = localStorage.getItem('TOKEN');
+        }
+        else {
+            token = this.cookieService.get('TOKEN');
+        }
+        return token;
+    };
+    AuthenticateService.prototype.storeTokenInLocalStorage = function () {
+        localStorage.setItem('TOKEN', this.getToken());
+        this.cookieService.remove('TOKEN');
     };
     AuthenticateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

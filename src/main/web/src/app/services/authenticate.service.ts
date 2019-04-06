@@ -36,6 +36,7 @@ export class AuthenticateService{
   }
 
   logout() {
+    localStorage.removeItem('TOKEN');
     this.cookieService.remove('TOKEN');
     this.setUserLoggedIn(false);
     this.routerService.redirectToRoot();
@@ -43,7 +44,18 @@ export class AuthenticateService{
   }
 
   getToken() {
-    return this.cookieService.get('TOKEN');
+    let token: string;
+    if (localStorage.getItem('TOKEN')) {
+      token = localStorage.getItem('TOKEN')
+    } else {
+      token = this.cookieService.get('TOKEN');
+    }
+    return token;
+  }
+
+  storeTokenInLocalStorage() {
+    localStorage.setItem('TOKEN', this.getToken());
+    this.cookieService.remove('TOKEN');
   }
 
 }

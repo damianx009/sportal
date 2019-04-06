@@ -5,9 +5,9 @@
         <mat-icon>error</mat-icon>
         <p>Nieprawidłowy login lub hasło.</p>
     </div>
-    <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit(f)"
-          fxLayout="column" fxLayoutAlign="center center">
-      <mat-form-field class="example-full-width">
+    <form class="login-form" #f="ngForm" (ngSubmit)="onSubmit(f)"
+          fxLayout="column" >
+      <mat-form-field>
         <input matInput 
               type="text" 
               placeholder="Login" 
@@ -15,7 +15,7 @@
               required>
           <mat-error>Pole nie może być puste.</mat-error>
       </mat-form-field>
-      <mat-form-field class="example-full-width">
+      <mat-form-field>
         <input matInput 
               type="password" 
               placeholder="Hasło" 
@@ -24,7 +24,10 @@
               required>
         <mat-error>Pole nie może być puste.</mat-error>
       </mat-form-field>
-      <button [disabled]="f.invalid" mat-raised-button color="primary" type="submit">Zaloguj się</button>
+      <mat-checkbox fxFlexAlign="left" [(ngModel)]="rememberMe" name="remebmerMeCheckbox">Zapamiętaj mnie</mat-checkbox>
+        <button [disabled]="f.invalid" mat-raised-button color="primary" type="submit">Zaloguj się</button>
+        <mat-divider></mat-divider>
+        <a mat-button routerLink="/login/recover">Nie pamiętasz hasła?</a>  
     </form>
   </div>
 </div>

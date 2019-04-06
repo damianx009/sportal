@@ -14,6 +14,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  rememberMe: boolean = false;
+
   invalidCrudentials: boolean = false;
   url: string;
 
@@ -33,8 +35,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.authenticateService.login(form.value.login, form.value.password).then(
-      (response: HttpResponse<any>) => {
+      () => {
         this.authenticateService.setUserLoggedIn(true);
+        if(this.rememberMe) {
+          this.authenticateService.storeTokenInLocalStorage();
+        }
+
         if (this.url) {
           this.router.navigate([this.url]);
         } else {
