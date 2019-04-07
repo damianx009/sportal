@@ -204,6 +204,25 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/consts/cookie.const.ts":
+/*!****************************************!*\
+  !*** ./src/app/consts/cookie.const.ts ***!
+  \****************************************/
+/*! exports provided: TOKEN_LABEL, AUTHS_LABEL, USERNAME_LABEL */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOKEN_LABEL", function() { return TOKEN_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AUTHS_LABEL", function() { return AUTHS_LABEL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "USERNAME_LABEL", function() { return USERNAME_LABEL; });
+var TOKEN_LABEL = 'TOKEN';
+var AUTHS_LABEL = 'AUTHORITIES';
+var USERNAME_LABEL = 'USERNAME';
+
+
+/***/ }),
+
 /***/ "./src/app/custom-components/faq/faq.component.css":
 /*!*********************************************************!*\
   !*** ./src/app/custom-components/faq/faq.component.css ***!
@@ -390,6 +409,7 @@ var LoginComponent = /** @class */ (function () {
         var _this = this;
         this.authenticateService.login(form.value.login, form.value.password).then(function () {
             _this.authenticateService.setUserLoggedIn(true);
+            _this.authenticateService.getUserPrincipal();
             if (_this.rememberMe) {
                 _this.authenticateService.storeTokenInLocalStorage();
             }
@@ -447,7 +467,7 @@ module.exports = ".logo {\r\n  width: 60%;\r\n  display: inline-block;\r\n  vert
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <div>\n        <a routerLink=\"/\">\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\n        </a>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\n        <li>\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\n        </li>\n        <li *ngIf=\"!authService.userLoggedIn\">\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\n        </li>\n        <li *ngIf=\"authService.userLoggedIn\">\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\n                <mat-icon>account_circle</mat-icon>\n                <span> xXxAdam69xXx</span>\n                <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n              <button mat-menu-item>\n                <mat-icon>home</mat-icon>\n                <span>Strona główna</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>star</mat-icon>\n                <span>Ulubione</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>history</mat-icon>\n                <span>Historia</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>feedback</mat-icon>\n                <span>Opinie</span>\n              </button>\n              <button mat-menu-item (click)=\"authService.logout()\">\n                  <mat-icon>reply</mat-icon>\n                  <span>Wyloguj się</span>\n                </button>\n            </mat-menu>            \n        </li>\n      </ul>\n    </div>\n  </mat-toolbar>\n  "
+module.exports = "<mat-toolbar color=\"primary\">\n    <div>\n        <a routerLink=\"/\">\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\n        </a>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\n        <li>\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\n        </li>\n        <li *ngIf=\"!authService.userLoggedIn\">\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\n        </li>\n        <li *ngIf=\"authService.userLoggedIn\">\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\n                <mat-icon>account_circle</mat-icon>\n                <span> {{username}}</span>\n                <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n              <button mat-menu-item>\n                <mat-icon>home</mat-icon>\n                <span>Strona główna</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>star</mat-icon>\n                <span>Ulubione</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>history</mat-icon>\n                <span>Historia</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>feedback</mat-icon>\n                <span>Opinie</span>\n              </button>\n              <button mat-menu-item (click)=\"authService.logout()\">\n                  <mat-icon>reply</mat-icon>\n                  <span>Wyloguj się</span>\n                </button>\n            </mat-menu>            \n        </li>\n      </ul>\n    </div>\n  </mat-toolbar>\n  "
 
 /***/ }),
 
@@ -479,8 +499,12 @@ var HeaderComponent = /** @class */ (function () {
             this.authService.checkToken()
                 .then(function () {
                 _this.authService.setUserLoggedIn(true);
+                _this.authService.getUserPrincipal();
             });
         }
+        this.authService.userNameChange.subscribe(function (username) {
+            _this.username = username;
+        });
     };
     HeaderComponent.prototype.onToggleSidenav = function () {
         this.sidenavToggle.emit();
@@ -802,6 +826,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_cookie_services_cookies_service__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_cookie_services_cookies_service__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _router_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./router.service */ "./src/app/services/router.service.ts");
 /* harmony import */ var _angular_material_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./angular-material.service */ "./src/app/services/angular-material.service.ts");
+/* harmony import */ var _consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../consts/cookie.const */ "./src/app/consts/cookie.const.ts");
+
 
 
 
@@ -814,6 +840,8 @@ var AuthenticateService = /** @class */ (function () {
         this.cookieService = cookieService;
         this.routerService = routerService;
         this.angularMaterialService = angularMaterialService;
+        this.userNameChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.userAuthsChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.userLoggedIn = false;
     }
     AuthenticateService.prototype.login = function (username, password) {
@@ -823,32 +851,54 @@ var AuthenticateService = /** @class */ (function () {
         };
         return this.http.post('/login', body).toPromise();
     };
-    AuthenticateService.prototype.checkToken = function () {
-        return this.http.get('/api/protected/checkToken').toPromise();
+    AuthenticateService.prototype.getUserPrincipal = function () {
+        var _this = this;
+        this.http.get('/api/protected/username').toPromise()
+            .then(function (response) {
+            console.log(response);
+            _this.setUsername(response.name);
+            _this.setUserAuthorities(response.authorities);
+        });
     };
     AuthenticateService.prototype.setUserLoggedIn = function (userLoggedIn) {
         this.userLoggedIn = userLoggedIn;
     };
     AuthenticateService.prototype.logout = function () {
-        localStorage.removeItem('TOKEN');
-        this.cookieService.remove('TOKEN');
+        localStorage.removeItem(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"]);
+        this.cookieService.remove(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"]);
         this.setUserLoggedIn(false);
         this.routerService.redirectToRoot();
         this.angularMaterialService.openSnackBar('Zostałeś wylogowany...');
     };
     AuthenticateService.prototype.getToken = function () {
         var token;
-        if (localStorage.getItem('TOKEN')) {
-            token = localStorage.getItem('TOKEN');
+        if (localStorage.getItem(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"])) {
+            token = localStorage.getItem(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"]);
         }
         else {
-            token = this.cookieService.get('TOKEN');
+            token = this.cookieService.get(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"]);
         }
         return token;
     };
     AuthenticateService.prototype.storeTokenInLocalStorage = function () {
-        localStorage.setItem('TOKEN', this.getToken());
-        this.cookieService.remove('TOKEN');
+        localStorage.setItem(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"], this.getToken());
+        this.cookieService.remove(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["TOKEN_LABEL"]);
+    };
+    AuthenticateService.prototype.checkToken = function () {
+        return this.http.get('/api/protected/checkToken').toPromise();
+    };
+    AuthenticateService.prototype.setUsername = function (name) {
+        this.cookieService.put(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["USERNAME_LABEL"], name);
+        this.userNameChange.emit(name);
+    };
+    AuthenticateService.prototype.setUserAuthorities = function (authorities) {
+        var auths = [];
+        for (var i = 0; i < authorities.length; i++) {
+            auths.push(authorities[i].authority);
+        }
+        var authslist = auths.join(':');
+        this.cookieService.put(_consts_cookie_const__WEBPACK_IMPORTED_MODULE_6__["AUTHS_LABEL"], authslist);
+        this.userAuthsChange.emit(authslist);
     };
     AuthenticateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({

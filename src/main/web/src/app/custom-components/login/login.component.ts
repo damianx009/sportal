@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
     this.authenticateService.login(form.value.login, form.value.password).then(
       () => {
         this.authenticateService.setUserLoggedIn(true);
+        this.authenticateService.getUserPrincipal();
         if(this.rememberMe) {
           this.authenticateService.storeTokenInLocalStorage();
         }

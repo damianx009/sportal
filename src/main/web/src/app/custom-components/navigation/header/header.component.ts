@@ -8,8 +8,11 @@ import { AuthenticateService } from 'src/app/services/authenticate.service';
 })
 export class HeaderComponent implements OnInit {
   @Output() sidenavToggle = new EventEmitter<void>();
+
+  username: string;
   
   constructor(public authService: AuthenticateService) { }
+
   ngOnInit() {
     const token = this.authService.getToken();
 
@@ -17,12 +20,20 @@ export class HeaderComponent implements OnInit {
       this.authService.checkToken()
         .then(()=>{
           this.authService.setUserLoggedIn(true);
+          this.authService.getUserPrincipal(); 
         });
     }
+
+    this.authService.userNameChange.subscribe(
+      (username: string) => {
+        this.username = username;}
+    );
   }
 
   onToggleSidenav() {
     this.sidenavToggle.emit();
   }
+
+
 
 }

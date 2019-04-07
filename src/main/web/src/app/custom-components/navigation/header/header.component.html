@@ -21,7 +21,7 @@
         <li *ngIf="authService.userLoggedIn">
             <button mat-button [matMenuTriggerFor]="menu" class="menu-button navigation-item">
                 <mat-icon>account_circle</mat-icon>
-                <span> xXxAdam69xXx</span>
+                <span> {{username}}</span>
                 <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" [overlapTrigger]="false">
