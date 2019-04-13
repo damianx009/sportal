@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import {
     HttpInterceptor,
-    HttpResponse,
     HttpHandler,
     HttpEvent,
     HttpErrorResponse,
-    HttpRequest
+    HttpRequest,
+    HttpEventType
 } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { AuthenticateService } from '../services/authenticate.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RouterService } from '../services/router.service';
 
 @Injectable()
@@ -43,12 +43,13 @@ export class HttpHeadersConfigInterceptor implements HttpInterceptor {
         req = req.clone({ headers: req.headers.set('Accept', 'application/json') });
 
         return next.handle(req).pipe(
-            map((event: HttpEvent<any>) => {
-                if (event instanceof HttpResponse) {
-                    console.log('event--->>>', event);
+            catchError((error: HttpErrorResponse) => {
+                if (error.status === 401) {
+                    this.authService.logout();
                 }
-                return event;
-            }));
+                return throwError(error);
+            })
+        );
     }
     
 }

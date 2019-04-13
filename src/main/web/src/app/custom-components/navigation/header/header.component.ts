@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-header',
@@ -18,9 +19,9 @@ export class HeaderComponent implements OnInit {
 
     if(token) {
       this.authService.checkToken()
-        .then(()=>{
+        .then(async()=>{
           this.authService.setUserLoggedIn(true);
-          this.authService.getUserPrincipal(); 
+          await this.authService.getUserPrincipal(); 
         });
     }
 

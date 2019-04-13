@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onSubmit(form: NgForm) {
+  async onSubmit(form: NgForm) {
     this.authenticateService.login(form.value.login, form.value.password).then(
-      () => {
+      async () => {
         this.authenticateService.setUserLoggedIn(true);
-        this.authenticateService.getUserPrincipal();
+        await this.authenticateService.getUserPrincipal();
         if(this.rememberMe) {
           this.authenticateService.storeTokenInLocalStorage();
         }

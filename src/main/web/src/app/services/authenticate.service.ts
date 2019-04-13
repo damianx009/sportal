@@ -4,6 +4,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { RouterService } from './router.service';
 import { AngularMaterialService } from './angular-material.service';
 import { TOKEN_LABEL, AUTHS_LABEL, USERNAME_LABEL } from '../consts/cookie.const';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,14 @@ export class AuthenticateService{
 
   userNameChange: EventEmitter<string> = new EventEmitter();
   userAuthsChange: EventEmitter<string> = new EventEmitter();
+  private loginSubject = new Subject<any>();
 
   public userLoggedIn: boolean = false;
 
   constructor(private http: HttpClient,
               private cookieService: CookieService,
               private routerService: RouterService,
-              private angularMaterialService: AngularMaterialService) {
-               }
+              private angularMaterialService: AngularMaterialService) { }
 
   login(username: string, password: string) {
 
@@ -31,8 +32,8 @@ export class AuthenticateService{
     return this.http.post('/login',body).toPromise();
   }
 
-  getUserPrincipal() {
-    this.http.get('/api/protected/username').toPromise()
+  async getUserPrincipal() {
+    await this.http.get('/api/protected/username').toPromise()
       .then((response: any) => {
         console.log(response);
         this.setUsername(response.name)
@@ -88,5 +89,24 @@ export class AuthenticateService{
 
     this.cookieService.put(AUTHS_LABEL, authslist);
     this.userAuthsChange.emit(authslist);
+  }
+
+  hasRole(roles: string[]): boolean {
+    const userRoles = this.cookieService.get(AUTHS_LABEL);
+
+    for (let role of roles) {
+      if (userRoles.includes(role)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  sendLoginMessage() {
+    this.loginSubject.next();
+  }
+
+  getLoginSubject():Promise<any> {
+    return this.loginSubject.asObservable().toPromise();
   }
 }

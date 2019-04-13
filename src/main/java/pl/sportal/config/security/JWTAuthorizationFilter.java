@@ -39,9 +39,13 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
             return;
         }
 
-        UsernamePasswordAuthenticationToken authentication = getAuthentication(req);
-
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        try {
+            UsernamePasswordAuthenticationToken authentication = getAuthentication(req);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+        } catch (Exception e) {
+            res.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
+            return;
+        }
         chain.doFilter(req, res);
     }
 
@@ -59,7 +63,6 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                                      .build()
                                      .verify(token.replace(TOKEN_PREFIX, ""))
                                      .getClaim("roles").asString();
-            System.out.println(roles);
 
             final Collection authorities =
                     Arrays.stream(roles.split(","))
