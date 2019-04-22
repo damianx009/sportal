@@ -11,11 +11,13 @@ import { PageNotFoundComponent } from './custom-components/page-not-found/page-n
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './custom-components/navigation/header/header.component';
 import { SidenavListComponent } from './custom-components/navigation/sidenav-list/sidenav-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CookieService } from "angular2-cookie/services/cookies.service";
 import { HttpHeadersConfigInterceptor } from './interceptors/http-headers-config.interceptor';
 import { FaqComponent } from './custom-components/faq/faq.component';
+import { AgmCoreModule } from '@agm/core';
+import { HomeViewComponent } from './custom-components/home-view/home-view.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { FaqComponent } from './custom-components/faq/faq.component';
     PageNotFoundComponent,
     HeaderComponent,
     SidenavListComponent,
-    FaqComponent
+    FaqComponent,
+    HomeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,12 @@ import { FaqComponent } from './custom-components/faq/faq.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCGWO_MHhFm_yRmGtw-lWkUG6UsH7Xv58I',
+      libraries: ["places"]
+    })
   ],
   providers: [CookieService,
               { provide: HTTP_INTERCEPTORS, useClass: HttpHeadersConfigInterceptor, multi: true }

@@ -5,9 +5,10 @@ import { FooterComponent } from './custom-components/footer/footer.component';
 import { FaqComponent } from './custom-components/faq/faq.component';
 import { NoAuthGuard } from './guards/no-auth-guard.service';
 import { AuthGuard } from './guards/auth-guard.service';
+import { HomeViewComponent } from './custom-components/home-view/home-view.component';
 
 const routes: Routes = [
-  { path: '', component: FooterComponent},
+  { path: '', component: HomeViewComponent},
   { path: 'help',
     component: FaqComponent,
     canActivate: [AuthGuard], 

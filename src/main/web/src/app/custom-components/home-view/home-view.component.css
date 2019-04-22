@@ -1,0 +1,36 @@
+agm-map {
+    height: 60vh;
+    width: 100%
+}
+
+h1 {
+    font-weight: 300;
+    margin: 0;
+    font-size: 18px;
+}
+
+mat-card {
+  padding: 0;
+}
+
+.mat-expansion-panel-header {
+  padding-left: 30px;
+  padding-right: 14px;
+}
+
+.header-align .mat-expansion-panel-header-title,
+.header-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-location {
+  color: #3f51b5;
+}
+
+.user-location:active,
+.user-location:hover {
+  color:grey;
+  cursor: pointer;
+}
