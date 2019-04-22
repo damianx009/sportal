@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-toolbar color="primary">
+    <h1>Znajdź swój wymarzony obiekt!</h1>
+  </mat-toolbar>
+  <mat-accordion class="header-align" fxFlexFill>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Filtr i lokalizacja
+        </mat-panel-title>
+        <mat-panel-description>
+          <p fxHide.gt-xs></p>
+          <p fxHide.xs>Tutaj możesz zmienić swoje predyspozycje co do obiektu</p>
+          <mat-icon>filter_list</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+        <mat-divider></mat-divider>
+          <mat-form-field>
+              <input matInput placeholder="Podaj lokalizację" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+          </mat-form-field>
+          <mat-icon matSuffix class="user-location" (click)="setCurrentPosition()">location_on</mat-icon>
+        <mat-divider></mat-divider>
+          <mat-slide-toggle>
+            Piłka nożna
+          </mat-slide-toggle>
+          <mat-slide-toggle>
+            Koszykówka
+          </mat-slide-toggle>
+
+    </mat-expansion-panel>
+  </mat-accordion>      
+
+  <agm-map [latitude]="latitude" 
+           [longitude]="longitude" 
+           [scrollwheel]="false" 
+           [clickableIcons]="false"
+           [streetViewControl]="false"
+           [zoom]="zoom">
+      <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+</div>
