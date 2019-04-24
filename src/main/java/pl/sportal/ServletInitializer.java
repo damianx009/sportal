@@ -1,4 +1,4 @@
-package pl.sportal.config;
+package pl.sportal;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

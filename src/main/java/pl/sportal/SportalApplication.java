@@ -1,4 +1,4 @@
-package pl.sportal.config;
+package pl.sportal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@ComponentScan(basePackages="pl.sportal") 
+
 @SpringBootApplication
 public class SportalApplication {
 
