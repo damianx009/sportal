@@ -6,6 +6,8 @@ import { FaqComponent } from './custom-components/faq/faq.component';
 import { NoAuthGuard } from './guards/no-auth-guard.service';
 import { AuthGuard } from './guards/auth-guard.service';
 import { HomeViewComponent } from './custom-components/home-view/home-view.component';
+import { RegisterComponent } from './custom-components/login/register/register.component';
+import { AcceptRegisterComponent } from './custom-components/login/register/acceptregister/acceptregister.component';
 
 const routes: Routes = [
   { path: '', component: HomeViewComponent},
@@ -17,7 +19,10 @@ const routes: Routes = [
     }
   },
   { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard]},
+  { path: 'register', component: RegisterComponent},
+  { path: 'acceptregister', component: AcceptRegisterComponent},
   { path: '**', redirectTo: '', pathMatch: 'full'}
+
 ];
 
 @NgModule({

@@ -23,6 +23,26 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/_models/user.ts":
+/*!*********************************!*\
+  !*** ./src/app/_models/user.ts ***!
+  \*********************************/
+/*! exports provided: user */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "user", function() { return user; });
+var user = /** @class */ (function () {
+    function user() {
+    }
+    return user;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -41,6 +61,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _guards_no_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./guards/no-auth-guard.service */ "./src/app/guards/no-auth-guard.service.ts");
 /* harmony import */ var _guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./guards/auth-guard.service */ "./src/app/guards/auth-guard.service.ts");
 /* harmony import */ var _custom_components_home_view_home_view_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./custom-components/home-view/home-view.component */ "./src/app/custom-components/home-view/home-view.component.ts");
+/* harmony import */ var _custom_components_login_register_register_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./custom-components/login/register/register.component */ "./src/app/custom-components/login/register/register.component.ts");
+/* harmony import */ var _custom_components_login_register_acceptregister_acceptregister_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./custom-components/login/register/acceptregister/acceptregister.component */ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.ts");
+
+
 
 
 
@@ -59,6 +83,8 @@ var routes = [
         }
     },
     { path: 'login', component: _custom_components_login_login_component__WEBPACK_IMPORTED_MODULE_3__["LoginComponent"], canActivate: [_guards_no_auth_guard_service__WEBPACK_IMPORTED_MODULE_5__["NoAuthGuard"]] },
+    { path: 'register', component: _custom_components_login_register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"] },
+    { path: 'acceptregister', component: _custom_components_login_register_acceptregister_acceptregister_component__WEBPACK_IMPORTED_MODULE_9__["AcceptRegisterComponent"] },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -95,7 +121,7 @@ module.exports = "app-header {\r\n  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\n    <mat-sidenav position=\"end\" #sidenav role=\"navigation\">\n        <app-sidenav-list (closeSidenav)=\"sidenav.close()\"></app-sidenav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n        <app-header (sidenavToggle)=\"sidenav.toggle()\"></app-header>\n        <main>\n            <router-outlet></router-outlet>\n        </main>\n        <app-footer></app-footer>\n    </mat-sidenav-content>\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container>\r\n    <mat-sidenav position=\"end\" #sidenav role=\"navigation\">\r\n        <app-sidenav-list (closeSidenav)=\"sidenav.close()\"></app-sidenav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <app-header (sidenavToggle)=\"sidenav.toggle()\"></app-header>\r\n        <main>\r\n            <router-outlet></router-outlet>\r\n        </main>\r\n        <app-footer></app-footer>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -161,6 +187,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _custom_components_faq_faq_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./custom-components/faq/faq.component */ "./src/app/custom-components/faq/faq.component.ts");
 /* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/index.js");
 /* harmony import */ var _custom_components_home_view_home_view_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./custom-components/home-view/home-view.component */ "./src/app/custom-components/home-view/home-view.component.ts");
+/* harmony import */ var _custom_components_login_register_register_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./custom-components/login/register/register.component */ "./src/app/custom-components/login/register/register.component.ts");
+/* harmony import */ var _custom_components_login_register_acceptregister_acceptregister_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./custom-components/login/register/acceptregister/acceptregister.component */ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.ts");
+
+
 
 
 
@@ -189,6 +219,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                 _custom_components_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"],
+                _custom_components_login_register_register_component__WEBPACK_IMPORTED_MODULE_20__["RegisterComponent"],
+                _custom_components_login_register_acceptregister_acceptregister_component__WEBPACK_IMPORTED_MODULE_21__["AcceptRegisterComponent"],
                 _custom_components_footer_footer_component__WEBPACK_IMPORTED_MODULE_8__["FooterComponent"],
                 _custom_components_page_not_found_page_not_found_component__WEBPACK_IMPORTED_MODULE_9__["PageNotFoundComponent"],
                 _custom_components_navigation_header_header_component__WEBPACK_IMPORTED_MODULE_11__["HeaderComponent"],
@@ -260,7 +292,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  faq works!\n</p>\n"
+module.exports = "<p>\r\n  faq works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -323,7 +355,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  footer works!\n</p>\n"
+module.exports = "<p>\r\n  footer works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -379,7 +411,7 @@ module.exports = "agm-map {\r\n    height: 60vh;\r\n    width: 100%\r\n}\r\n\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <mat-toolbar color=\"primary\">\n    <h1>Znajdź swój wymarzony obiekt!</h1>\n  </mat-toolbar>\n  <mat-accordion class=\"header-align\" fxFlexFill>\n    <mat-expansion-panel hideToggle>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Filtr i lokalizacja\n        </mat-panel-title>\n        <mat-panel-description>\n          <p fxHide.gt-xs></p>\n          <p fxHide.xs>Tutaj możesz zmienić swoje predyspozycje co do obiektu</p>\n          <mat-icon>filter_list</mat-icon>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n        <mat-divider></mat-divider>\n          <mat-form-field>\n              <input matInput placeholder=\"Podaj lokalizację\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n          </mat-form-field>\n          <mat-icon matSuffix class=\"user-location\" (click)=\"setCurrentPosition()\">location_on</mat-icon>\n        <mat-divider></mat-divider>\n          <mat-slide-toggle>\n            Piłka nożna\n          </mat-slide-toggle>\n          <mat-slide-toggle>\n            Koszykówka\n          </mat-slide-toggle>\n\n    </mat-expansion-panel>\n  </mat-accordion>      \n\n  <agm-map [latitude]=\"latitude\" \n           [longitude]=\"longitude\" \n           [scrollwheel]=\"false\" \n           [clickableIcons]=\"false\"\n           [streetViewControl]=\"false\"\n           [zoom]=\"zoom\">\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n  </agm-map>\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <mat-toolbar color=\"primary\">\r\n    <h1>Znajdź swój wymarzony obiekt!</h1>\r\n  </mat-toolbar>\r\n  <mat-accordion class=\"header-align\" fxFlexFill>\r\n    <mat-expansion-panel hideToggle>\r\n      <mat-expansion-panel-header>\r\n        <mat-panel-title>\r\n          Filtr i lokalizacja\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n          <p fxHide.gt-xs></p>\r\n          <p fxHide.xs>Tutaj możesz zmienić swoje predyspozycje co do obiektu</p>\r\n          <mat-icon>filter_list</mat-icon>\r\n        </mat-panel-description>\r\n      </mat-expansion-panel-header>\r\n        <mat-divider></mat-divider>\r\n          <mat-form-field>\r\n              <input matInput placeholder=\"Podaj lokalizację\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\r\n          </mat-form-field>\r\n          <mat-icon matSuffix class=\"user-location\" (click)=\"setCurrentPosition()\">location_on</mat-icon>\r\n        <mat-divider></mat-divider>\r\n          <mat-slide-toggle>\r\n            Piłka nożna\r\n          </mat-slide-toggle>\r\n          <mat-slide-toggle>\r\n            Koszykówka\r\n          </mat-slide-toggle>\r\n\r\n    </mat-expansion-panel>\r\n  </mat-accordion>      \r\n\r\n  <agm-map [latitude]=\"latitude\" \r\n           [longitude]=\"longitude\" \r\n           [scrollwheel]=\"false\" \r\n           [clickableIcons]=\"false\"\r\n           [streetViewControl]=\"false\"\r\n           [zoom]=\"zoom\">\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n  </agm-map>\r\n</div>"
 
 /***/ }),
 
@@ -487,7 +519,7 @@ module.exports = ".login-form {\r\n    padding: 0px 16px;\r\n}\r\n\r\n.login-for
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <div class=\"login-form__container\">\n    <h4>Logowanie</h4>\n    <div *ngIf=\"invalidCrudentials\" id=\"invalid-crudential-alert\" class=\"mat-error\" style=\"font-size: 0.9rem\" fxLayout fxLayoutAlign=\"left center\">\n        <mat-icon>error</mat-icon>\n        <p>Nieprawidłowy login lub hasło.</p>\n    </div>\n    <form class=\"login-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\"\n          fxLayout=\"column\" >\n      <mat-form-field>\n        <input matInput \n              type=\"text\" \n              placeholder=\"Login\" \n              ngModel name=\"login\" \n              required>\n          <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <mat-form-field>\n        <input matInput \n              type=\"password\" \n              placeholder=\"Hasło\" \n              ngModel \n              name=\"password\"\n              required>\n        <mat-error>Pole nie może być puste.</mat-error>\n      </mat-form-field>\n      <mat-checkbox fxFlexAlign=\"left\" [(ngModel)]=\"rememberMe\" name=\"remebmerMeCheckbox\">Zapamiętaj mnie</mat-checkbox>\n        <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Zaloguj się</button>\n        <mat-divider></mat-divider>\n        <a mat-button routerLink=\"/login/recover\">Nie pamiętasz hasła?</a>  \n    </form>\n  </div>\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <a routerLink=\"/register\"> <button mat-raised-button color=\"primary\" type=\"submit\"> Rejestracja </button></a>\r\n  <div class=\"login-form__container\">\r\n    <h4>Logowanie</h4>\r\n    <div *ngIf=\"invalidCrudentials\" id=\"invalid-crudential-alert\" class=\"mat-error\" style=\"font-size: 0.9rem\" fxLayout fxLayoutAlign=\"left center\">\r\n        <mat-icon>error</mat-icon>\r\n        <p>Nieprawidłowy login lub hasło.</p>\r\n    </div>\r\n    <form class=\"login-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\"\r\n          fxLayout=\"column\" >\r\n      <mat-form-field>\r\n        <input matInput \r\n              type=\"text\" \r\n              placeholder=\"Login\" \r\n              ngModel name=\"login\" \r\n              required>\r\n          <mat-error>Pole nie może być puste.</mat-error>\r\n      </mat-form-field>\r\n      <mat-form-field>\r\n        <input matInput \r\n              type=\"password\" \r\n              placeholder=\"Hasło\" \r\n              ngModel \r\n              name=\"password\"\r\n              required>\r\n        <mat-error>Pole nie może być puste.</mat-error>\r\n      </mat-form-field>\r\n      <mat-checkbox fxFlexAlign=\"left\" [(ngModel)]=\"rememberMe\" name=\"remebmerMeCheckbox\">Zapamiętaj mnie</mat-checkbox>\r\n        <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Zaloguj się</button>\r\n        <mat-divider></mat-divider>\r\n        <a mat-button routerLink=\"/login/recover\">Nie pamiętasz hasła?</a>  \r\n    </form>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -589,6 +621,154 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.css":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/acceptregister/acceptregister.component.css ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".acceptregister-form_container {\r\n    border: solid 3px #3f51b5;\r\n    margin-top: 10vh;\r\n    border-radius: 10px;\r\n    padding: 15px;\r\n}\r\n\r\nbutton {\r\n    margin-top: 10px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbXBvbmVudHMvbG9naW4vcmVnaXN0ZXIvYWNjZXB0cmVnaXN0ZXIvYWNjZXB0cmVnaXN0ZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jdXN0b20tY29tcG9uZW50cy9sb2dpbi9yZWdpc3Rlci9hY2NlcHRyZWdpc3Rlci9hY2NlcHRyZWdpc3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFjY2VwdHJlZ2lzdGVyLWZvcm1fY29udGFpbmVyIHtcclxuICAgIGJvcmRlcjogc29saWQgM3B4ICMzZjUxYjU7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHZoO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.html":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/acceptregister/acceptregister.component.html ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n      <div class=\"acceptregister-form_container\">\r\n        <h4>Potwierdzenie</h4>\r\n        <p>Wprowadź otrzymany kod.</p>\r\n        <div *ngIf=\"invalidCrudentials\" id=\"invalid-crudential-alert\" class=\"mat-error\" style=\"font-size: 0.9rem\" fxLayout fxLayoutAlign=\"left center\">\r\n            <mat-icon>error</mat-icon>\r\n            <p>Nieprawidłowy kod potwierdzający.</p>\r\n        </div>\r\n        <form class=\"example-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit(f)\"\r\n              fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n          <mat-form-field class=\"example-full-width\">\r\n            <input matInput \r\n                  type=\"text\" \r\n                  placeholder=\"Kod\" \r\n                  ngModel name=\"acceptcode\" \r\n                  required>\r\n              <mat-error>Wprowadź kod.</mat-error>\r\n          </mat-form-field>\r\n          <a>\r\n          <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Potwierdź.</button></a>\r\n        </form>\r\n      </div>\r\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.ts":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/acceptregister/acceptregister.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: AcceptRegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcceptRegisterComponent", function() { return AcceptRegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var AcceptRegisterComponent = /** @class */ (function () {
+    function AcceptRegisterComponent() {
+    }
+    AcceptRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-acceptregister',
+            template: __webpack_require__(/*! ./acceptregister.component.html */ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.html"),
+            styles: [__webpack_require__(/*! ./acceptregister.component.css */ "./src/app/custom-components/login/register/acceptregister/acceptregister.component.css")]
+        })
+    ], AcceptRegisterComponent);
+    return AcceptRegisterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/custom-components/login/register/register.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/register.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".register-form_container {\r\n    border: solid 3px #3f51b5;\r\n    margin-top: 10vh;\r\n    border-radius: 10px;\r\n    padding: 15px;\r\n}\r\n\r\nbutton {\r\n    margin-top: 10px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3VzdG9tLWNvbXBvbmVudHMvbG9naW4vcmVnaXN0ZXIvcmVnaXN0ZXIuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtJQUN6QixnQkFBZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9jdXN0b20tY29tcG9uZW50cy9sb2dpbi9yZWdpc3Rlci9yZWdpc3Rlci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJlZ2lzdGVyLWZvcm1fY29udGFpbmVyIHtcclxuICAgIGJvcmRlcjogc29saWQgM3B4ICMzZjUxYjU7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHZoO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIHBhZGRpbmc6IDE1cHg7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xyXG59Il19 */"
+
+/***/ }),
+
+/***/ "./src/app/custom-components/login/register/register.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/register.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n        <div class=\"register-form_container\">\r\n            <h4>Rejestracja</h4>\r\n            <form class=\"example-form\" #f=\"ngForm\" (ngSubmit)=\"onSubmit()\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput type=\"text\" \r\n                        placeholder=\"Login\" \r\n                        [(ngModel)]=\"user.username\" \r\n                        name=\"username\" \r\n                        required\r\n                        #username=\"ngModel\">\r\n                    <mat-error>Pole nie może być puste.</mat-error>\r\n                </mat-form-field>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput type=\"password\" \r\n                        placeholder=\"Hasło\" \r\n                        [(ngModel)]=\"user.password\" \r\n                        name=\"password\" \r\n                        required\r\n                        #password=\"ngModel\">\r\n                    <mat-error>Pole nie może być puste.</mat-error>\r\n                </mat-form-field>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput type=\"text\" \r\n                        placeholder=\"Imię\" \r\n                        [(ngModel)]=\"user.name\" \r\n                        name=\"name\" \r\n                        required\r\n                        #name=\"ngModel\">\r\n                    <mat-error>Pole nie może być puste.</mat-error>\r\n                </mat-form-field>\r\n                <mat-form-field class=\"example-full-width\">\r\n                     <input matInput type=\"text\" \r\n                           placeholder=\"Numer telefonu\" \r\n                           [(ngModel)]=\"user.phonenumber\" \r\n                           name=\"phonenumber\" \r\n                           required\r\n                           #phonenumber=\"ngModel\">\r\n                    <mat-error>Pole nie może być puste.</mat-error>\r\n                </mat-form-field>\r\n                <mat-form-field class=\"example-full-width\">\r\n                    <input matInput type=\"text\" \r\n                           placeholder=\"Email\" \r\n                           [(ngModel)]=\"user.email\" \r\n                           name=\"email\" \r\n                           required\r\n                           #email=\"ngModel\">\r\n                    <mat-error>Pole nie może być puste.</mat-error>\r\n                </mat-form-field>\r\n             <button [disabled]=\"f.invalid\" mat-raised-button color=\"primary\" type=\"submit\">Zarejestruj.</button>\r\n            </form>\r\n        </div>\r\n    </div>"
+
+/***/ }),
+
+/***/ "./src/app/custom-components/login/register/register.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/custom-components/login/register/register.component.ts ***!
+  \************************************************************************/
+/*! exports provided: RegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterComponent", function() { return RegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_services_authenticate_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/authenticate.service */ "./src/app/services/authenticate.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_models_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/_models/user */ "./src/app/_models/user.ts");
+/* harmony import */ var src_app_services_angular_material_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/angular-material.service */ "./src/app/services/angular-material.service.ts");
+/* harmony import */ var src_app_services_view_action_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/view-action.service */ "./src/app/services/view-action.service.ts");
+/* harmony import */ var src_app_services_router_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/router.service */ "./src/app/services/router.service.ts");
+
+
+
+
+
+
+
+
+var RegisterComponent = /** @class */ (function () {
+    function RegisterComponent(authenticateService, router, angularMaterialService, routerService, viewActionService, route) {
+        this.authenticateService = authenticateService;
+        this.router = router;
+        this.angularMaterialService = angularMaterialService;
+        this.routerService = routerService;
+        this.viewActionService = viewActionService;
+        this.route = route;
+        this.loading = false;
+        this.submitted = false;
+        this.error = false;
+        this.user = new src_app_models_user__WEBPACK_IMPORTED_MODULE_4__["user"]();
+        if (this.authenticateService.userLoggedIn) {
+            this.router.navigate(['/']);
+        }
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent.prototype.onSubmit = function () {
+        var _this = this;
+        console.log(this.user);
+        this.authenticateService.register(this.user).then(function (response) {
+            console.log(response);
+            _this.angularMaterialService.openSnackBar("Zostałeś zarejestrowany !");
+            _this.router.navigate(['/']);
+        });
+    };
+    RegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-register',
+            template: __webpack_require__(/*! ./register.component.html */ "./src/app/custom-components/login/register/register.component.html"),
+            styles: [__webpack_require__(/*! ./register.component.css */ "./src/app/custom-components/login/register/register.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_services_authenticate_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticateService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            src_app_services_angular_material_service__WEBPACK_IMPORTED_MODULE_5__["AngularMaterialService"],
+            src_app_services_router_service__WEBPACK_IMPORTED_MODULE_7__["RouterService"],
+            src_app_services_view_action_service__WEBPACK_IMPORTED_MODULE_6__["ViewActionService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
+    ], RegisterComponent);
+    return RegisterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/custom-components/navigation/header/header.component.css":
 /*!**************************************************************************!*\
   !*** ./src/app/custom-components/navigation/header/header.component.css ***!
@@ -607,7 +787,7 @@ module.exports = "\r\n.logo {\r\n  width: 60%;\r\n  display: inline-block;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n    <div>\n        <a routerLink=\"/\">\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\n        </a>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\n        <mat-icon>menu</mat-icon>\n      </button>\n    </div>\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\n        <li>\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\n        </li>\n        <li *ngIf=\"!authService.userLoggedIn\">\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\n        </li>\n        <li *ngIf=\"authService.userLoggedIn\">\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\n                <mat-icon>account_circle</mat-icon>\n                <span> {{username}}</span>\n                <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\n              <button mat-menu-item>\n                <mat-icon>home</mat-icon>\n                <span>Strona główna</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>star</mat-icon>\n                <span>Ulubione</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>history</mat-icon>\n                <span>Historia</span>\n              </button>\n              <button mat-menu-item>\n                <mat-icon>feedback</mat-icon>\n                <span>Opinie</span>\n              </button>\n              <button mat-menu-item (click)=\"authService.logout()\">\n                  <mat-icon>reply</mat-icon>\n                  <span>Wyloguj się</span>\n                </button>\n            </mat-menu>            \n        </li>\n      </ul>\n    </div>\n  </mat-toolbar>\n  "
+module.exports = "<mat-toolbar color=\"primary\">\r\n    <div>\r\n        <a routerLink=\"/\">\r\n          <img class=\"logo\" src=\"\">\r\n        </a>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\r\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\r\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\r\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\r\n        <li>\r\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\r\n        </li>\r\n        <li *ngIf=\"!authService.userLoggedIn\">\r\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\r\n        </li>\r\n        <li *ngIf=\"authService.userLoggedIn\">\r\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\r\n                <mat-icon>account_circle</mat-icon>\r\n                <span> {{username}}</span>\r\n                <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\r\n              <button mat-menu-item>\r\n                <mat-icon>home</mat-icon>\r\n                <span>Strona główna</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>star</mat-icon>\r\n                <span>Ulubione</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>history</mat-icon>\r\n                <span>Historia</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>feedback</mat-icon>\r\n                <span>Opinie</span>\r\n              </button>\r\n              <button mat-menu-item (click)=\"authService.logout()\">\r\n                  <mat-icon>reply</mat-icon>\r\n                  <span>Wyloguj się</span>\r\n                </button>\r\n            </mat-menu>            \r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </mat-toolbar>\r\n  "
 
 /***/ }),
 
@@ -694,7 +874,7 @@ module.exports = "a {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list>\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\n      <mat-icon>input</mat-icon>\n      <span class=\"nav-caption\">Zaloguj się</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\n      <span class=\"nav-caption\">Ulubione</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\n      <mat-icon>history</mat-icon>\n      <span class=\"nav-caption\">Historia</span>\n    </a>\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\n      <span class=\"nav-caption\">Opinie</span>\n    </a>\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\n      <mat-icon class=\"info-icon\">info</mat-icon>\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\n    </a>\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\" (click)=\"onLogout()\">\n      <button mat-icon-button >\n        <mat-icon>reply</mat-icon>\n        <span class=\"nav-caption\">Wyloguj się</span>\n      </button>\n    </mat-list-item>\n  </mat-nav-list>\n  "
+module.exports = "<mat-nav-list>\r\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\r\n      <mat-icon>input</mat-icon>\r\n      <span class=\"nav-caption\">Zaloguj się</span>\r\n    </a>\r\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\r\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\r\n      <span class=\"nav-caption\">Ulubione</span>\r\n    </a>\r\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\r\n      <mat-icon>history</mat-icon>\r\n      <span class=\"nav-caption\">Historia</span>\r\n    </a>\r\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\r\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\r\n      <span class=\"nav-caption\">Opinie</span>\r\n    </a>\r\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\r\n      <mat-icon class=\"info-icon\">info</mat-icon>\r\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\r\n    </a>\r\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\" (click)=\"onLogout()\">\r\n      <button mat-icon-button >\r\n        <mat-icon>reply</mat-icon>\r\n        <span class=\"nav-caption\">Wyloguj się</span>\r\n      </button>\r\n    </mat-list-item>\r\n  </mat-nav-list>\r\n  "
 
 /***/ }),
 
@@ -766,7 +946,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-not-found works!\n</p>\n"
+module.exports = "<p>\r\n  page-not-found works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1177,6 +1357,9 @@ var AuthenticateService = /** @class */ (function () {
         }
         return false;
     };
+    AuthenticateService.prototype.register = function (user) {
+        return this.http.post('/api/register', user).toPromise();
+    };
     AuthenticateService.prototype.sendLoginMessage = function () {
         this.loginSubject.next();
     };
@@ -1224,6 +1407,12 @@ var RouterService = /** @class */ (function () {
     };
     RouterService.prototype.redirectToLoginPage = function () {
         this.router.navigate(["/login"]);
+    };
+    RouterService.prototype.redirectToRegisterPage = function () {
+        this.router.navigate(["/register"]);
+    };
+    RouterService.prototype.redirectToAcceptRegisterPage = function () {
+        this.router.navigate(["/acceptregister"]);
     };
     RouterService.prototype.loginAndRedirectToUrl = function (url) {
         this.router.navigate(["/login"], { queryParams: { url: url } });
@@ -1378,7 +1567,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\ASUS\Desktop\Sportal\src\main\web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\app\sportal\src\main\web\src\main.ts */"./src/main.ts");
 
 
 /***/ })

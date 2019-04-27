@@ -5,6 +5,7 @@ import { RouterService } from './router.service';
 import { AngularMaterialService } from './angular-material.service';
 import { TOKEN_LABEL, AUTHS_LABEL, USERNAME_LABEL } from '../consts/cookie.const';
 import { Subject, Observable } from 'rxjs';
+import { user } from '../_models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -100,6 +101,10 @@ export class AuthenticateService{
       }
     }
     return false;
+  }
+
+  register(user: user) :Promise<any>{
+    return this.http.post('/api/register', user).toPromise();
   }
 
   sendLoginMessage() {

@@ -15,6 +15,14 @@ export class RouterService {
   redirectToLoginPage() {
     this.router.navigate(["/login"]);
   }
+  
+  redirectToRegisterPage() {
+    this.router.navigate(["/register"]);
+  }
+
+  redirectToAcceptRegisterPage() {
+    this.router.navigate(["/acceptregister"]);
+  }
 
   loginAndRedirectToUrl(url: string) {
     this.router.navigate(["/login"], { queryParams: {url: url}});
