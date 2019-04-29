@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class ApplicationUser {
-    @Id
+	@Id
     @Column(name = "username")
     private String username;
 
@@ -20,8 +20,14 @@ public class ApplicationUser {
 
     @Column(name = "email")
     private String email;
-
+    
     @Column(name = "enabled")
     private int active;
+    
+    @Column(name= "name")
+    private String name;
+    
+    @Column(name= "phonenumber")
+    private String phonenumber;
 
 }

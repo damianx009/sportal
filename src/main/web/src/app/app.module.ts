@@ -18,12 +18,16 @@ import { HttpHeadersConfigInterceptor } from './interceptors/http-headers-config
 import { FaqComponent } from './custom-components/faq/faq.component';
 import { AgmCoreModule } from '@agm/core';
 import { HomeViewComponent } from './custom-components/home-view/home-view.component';
+import { RegisterComponent } from './custom-components/login/register/register.component';
+import { AcceptRegisterComponent } from './custom-components/login/register/acceptregister/acceptregister.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    RegisterComponent,
+    AcceptRegisterComponent,
     FooterComponent,
     PageNotFoundComponent,
     HeaderComponent,

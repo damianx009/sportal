@@ -1,0 +1,53 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+        <div class="register-form_container">
+            <h4>Rejestracja</h4>
+            <form class="example-form" #f="ngForm" (ngSubmit)="onSubmit()" fxLayout="column" fxLayoutAlign="center center">
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" 
+                        placeholder="Login" 
+                        [(ngModel)]="user.username" 
+                        name="username" 
+                        required
+                        #username="ngModel">
+                    <mat-error>Pole nie może być puste.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" 
+                        placeholder="Hasło" 
+                        [(ngModel)]="user.password" 
+                        name="password" 
+                        required
+                        #password="ngModel">
+                    <mat-error>Pole nie może być puste.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" 
+                        placeholder="Imię" 
+                        [(ngModel)]="user.name" 
+                        name="name" 
+                        required
+                        #name="ngModel">
+                    <mat-error>Pole nie może być puste.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                     <input matInput type="text" 
+                           placeholder="Numer telefonu" 
+                           [(ngModel)]="user.phonenumber" 
+                           name="phonenumber" 
+                           required
+                           #phonenumber="ngModel">
+                    <mat-error>Pole nie może być puste.</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput type="text" 
+                           placeholder="Email" 
+                           [(ngModel)]="user.email" 
+                           name="email" 
+                           required
+                           #email="ngModel">
+                    <mat-error>Pole nie może być puste.</mat-error>
+                </mat-form-field>
+             <button [disabled]="f.invalid" mat-raised-button color="primary" type="submit">Zarejestruj.</button>
+            </form>
+        </div>
+    </div>
