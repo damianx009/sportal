@@ -1,15 +1,18 @@
 package pl.sportal.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="users")
-@Getter
-@Setter
 public class ApplicationUser {
 	@Id
     @Column(name = "username")
@@ -23,7 +26,7 @@ public class ApplicationUser {
     
     @Column(name = "enabled")
     private int active;
-    
+
     @Column(name= "name")
     private String name;
     

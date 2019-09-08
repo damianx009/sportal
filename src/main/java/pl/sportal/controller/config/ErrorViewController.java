@@ -1,4 +1,4 @@
-package pl.sportal.controller;
+package pl.sportal.controller.config;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

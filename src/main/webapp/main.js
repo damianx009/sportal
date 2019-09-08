@@ -121,7 +121,7 @@ module.exports = "app-header {\r\n  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2),0 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container>\r\n    <mat-sidenav position=\"end\" #sidenav role=\"navigation\">\r\n        <app-sidenav-list (closeSidenav)=\"sidenav.close()\"></app-sidenav-list>\r\n    </mat-sidenav>\r\n    <mat-sidenav-content>\r\n        <app-header (sidenavToggle)=\"sidenav.toggle()\"></app-header>\r\n        <main>\r\n            <router-outlet></router-outlet>\r\n        </main>\r\n        <app-footer></app-footer>\r\n    </mat-sidenav-content>\r\n</mat-sidenav-container>"
+module.exports = "<mat-sidenav-container>\n    <mat-sidenav position=\"end\" #sidenav role=\"navigation\">\n        <app-sidenav-list (closeSidenav)=\"sidenav.close()\"></app-sidenav-list>\n    </mat-sidenav>\n    <mat-sidenav-content>\n        <app-header (sidenavToggle)=\"sidenav.toggle()\"></app-header>\n        <main>\n            <router-outlet></router-outlet>\n        </main>\n        <app-footer></app-footer>\n    </mat-sidenav-content>\n</mat-sidenav-container>"
 
 /***/ }),
 
@@ -292,7 +292,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  faq works!\r\n</p>\r\n"
+module.exports = "<p>\n  faq works!\n</p>\n"
 
 /***/ }),
 
@@ -355,7 +355,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  footer works!\r\n</p>\r\n"
+module.exports = "<p>\n  footer works!\n</p>\n"
 
 /***/ }),
 
@@ -411,7 +411,7 @@ module.exports = "agm-map {\r\n    height: 60vh;\r\n    width: 100%\r\n}\r\n\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <mat-toolbar color=\"primary\">\r\n    <h1>Znajdź swój wymarzony obiekt!</h1>\r\n  </mat-toolbar>\r\n  <mat-accordion class=\"header-align\" fxFlexFill>\r\n    <mat-expansion-panel hideToggle>\r\n      <mat-expansion-panel-header>\r\n        <mat-panel-title>\r\n          Filtr i lokalizacja\r\n        </mat-panel-title>\r\n        <mat-panel-description>\r\n          <p fxHide.gt-xs></p>\r\n          <p fxHide.xs>Tutaj możesz zmienić swoje predyspozycje co do obiektu</p>\r\n          <mat-icon>filter_list</mat-icon>\r\n        </mat-panel-description>\r\n      </mat-expansion-panel-header>\r\n        <mat-divider></mat-divider>\r\n          <mat-form-field>\r\n              <input matInput placeholder=\"Podaj lokalizację\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\r\n          </mat-form-field>\r\n          <mat-icon matSuffix class=\"user-location\" (click)=\"setCurrentPosition()\">location_on</mat-icon>\r\n        <mat-divider></mat-divider>\r\n          <mat-slide-toggle>\r\n            Piłka nożna\r\n          </mat-slide-toggle>\r\n          <mat-slide-toggle>\r\n            Koszykówka\r\n          </mat-slide-toggle>\r\n\r\n    </mat-expansion-panel>\r\n  </mat-accordion>      \r\n\r\n  <agm-map [latitude]=\"latitude\" \r\n           [longitude]=\"longitude\" \r\n           [scrollwheel]=\"false\" \r\n           [clickableIcons]=\"false\"\r\n           [streetViewControl]=\"false\"\r\n           [zoom]=\"zoom\">\r\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\r\n  </agm-map>\r\n</div>"
+module.exports = "<div fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <mat-toolbar color=\"primary\">\n    <h1>Znajdź swój wymarzony obiekt!</h1>\n  </mat-toolbar>\n  <mat-accordion class=\"header-align\" fxFlexFill>\n    <mat-expansion-panel hideToggle>\n      <mat-expansion-panel-header>\n        <mat-panel-title>\n          Filtr i lokalizacja\n        </mat-panel-title>\n        <mat-panel-description>\n          <p fxHide.gt-xs></p>\n          <p fxHide.xs>Tutaj możesz zmienić swoje predyspozycje co do obiektu</p>\n          <mat-icon>filter_list</mat-icon>\n        </mat-panel-description>\n      </mat-expansion-panel-header>\n        <mat-divider></mat-divider>\n          <mat-form-field>\n              <input matInput placeholder=\"Podaj lokalizację\" autocorrect=\"off\" autocapitalize=\"off\" spellcheck=\"off\" type=\"text\" class=\"form-control\" #search [formControl]=\"searchControl\">\n          </mat-form-field>\n          <mat-icon matSuffix class=\"user-location\" (click)=\"setCurrentPosition()\">location_on</mat-icon>\n        <mat-divider></mat-divider>\n          <mat-slide-toggle>\n            Piłka nożna\n          </mat-slide-toggle>\n          <mat-slide-toggle>\n            Koszykówka\n          </mat-slide-toggle>\n\n    </mat-expansion-panel>\n  </mat-accordion>      \n\n  <agm-map [latitude]=\"latitude\" \n           [longitude]=\"longitude\" \n           [scrollwheel]=\"false\" \n           [clickableIcons]=\"false\"\n           [streetViewControl]=\"false\"\n           [zoom]=\"zoom\">\n      <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n  </agm-map>\n</div>"
 
 /***/ }),
 
@@ -787,7 +787,7 @@ module.exports = "\r\n.logo {\r\n  width: 60%;\r\n  display: inline-block;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\r\n    <div>\r\n        <a routerLink=\"/\">\r\n          <img class=\"logo\" src=\"\">\r\n        </a>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\r\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\r\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\r\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\r\n        <li>\r\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\r\n        </li>\r\n        <li *ngIf=\"!authService.userLoggedIn\">\r\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\r\n        </li>\r\n        <li *ngIf=\"authService.userLoggedIn\">\r\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\r\n                <mat-icon>account_circle</mat-icon>\r\n                <span> {{username}}</span>\r\n                <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\r\n              <button mat-menu-item>\r\n                <mat-icon>home</mat-icon>\r\n                <span>Strona główna</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>star</mat-icon>\r\n                <span>Ulubione</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>history</mat-icon>\r\n                <span>Historia</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>feedback</mat-icon>\r\n                <span>Opinie</span>\r\n              </button>\r\n              <button mat-menu-item (click)=\"authService.logout()\">\r\n                  <mat-icon>reply</mat-icon>\r\n                  <span>Wyloguj się</span>\r\n                </button>\r\n            </mat-menu>            \r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </mat-toolbar>\r\n  "
+module.exports = "<mat-toolbar color=\"primary\">\r\n    <div>\r\n        <a routerLink=\"/\">\r\n          <img class=\"logo\" src=\"assets/images/sportal_logo.png\">\r\n        </a>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end center\" fxHide.gt-xs>\r\n      <mat-icon *ngIf=\"authService.userLoggedIn\">account_circle</mat-icon>\r\n      <button mat-icon-button (click)=\"onToggleSidenav()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </div>\r\n    <div fxFlex fxLayout fxLayoutAlign=\"flex-end\" fxHide.xs>\r\n      <ul fxLayout fxLayoutGap=\"20px\" class=\"navigation-items\">\r\n        <li>\r\n          <a routerLink=\"/help\" [ngStyle]=\"{ 'vertical-align' :  authService.userLoggedIn ? 'sub': 'unset'}\">Pomoc</a>\r\n        </li>\r\n        <li *ngIf=\"!authService.userLoggedIn\">\r\n          <a class=\"navigation-item navigation-item__padding\" routerLink=\"/login\">Zaloguj się</a>\r\n        </li>\r\n        <li *ngIf=\"authService.userLoggedIn\">\r\n            <button mat-button [matMenuTriggerFor]=\"menu\" class=\"menu-button navigation-item\">\r\n                <mat-icon>account_circle</mat-icon>\r\n                <span> {{username}}</span>\r\n                <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <mat-menu #menu=\"matMenu\" [overlapTrigger]=\"false\">\r\n              <button mat-menu-item>\r\n                <mat-icon>home</mat-icon>\r\n                <span>Strona główna</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>star</mat-icon>\r\n                <span>Ulubione</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>history</mat-icon>\r\n                <span>Historia</span>\r\n              </button>\r\n              <button mat-menu-item>\r\n                <mat-icon>feedback</mat-icon>\r\n                <span>Opinie</span>\r\n              </button>\r\n              <button mat-menu-item (click)=\"authService.logout()\">\r\n                  <mat-icon>reply</mat-icon>\r\n                  <span>Wyloguj się</span>\r\n                </button>\r\n            </mat-menu>            \r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </mat-toolbar>\r\n  "
 
 /***/ }),
 
@@ -874,7 +874,7 @@ module.exports = "a {\r\n  text-decoration: none;\r\n  color: white;\r\n}\r\n  \
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-nav-list>\r\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\r\n      <mat-icon>input</mat-icon>\r\n      <span class=\"nav-caption\">Zaloguj się</span>\r\n    </a>\r\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\r\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\r\n      <span class=\"nav-caption\">Ulubione</span>\r\n    </a>\r\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\r\n      <mat-icon>history</mat-icon>\r\n      <span class=\"nav-caption\">Historia</span>\r\n    </a>\r\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\r\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\r\n      <span class=\"nav-caption\">Opinie</span>\r\n    </a>\r\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\r\n      <mat-icon class=\"info-icon\">info</mat-icon>\r\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\r\n    </a>\r\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\" (click)=\"onLogout()\">\r\n      <button mat-icon-button >\r\n        <mat-icon>reply</mat-icon>\r\n        <span class=\"nav-caption\">Wyloguj się</span>\r\n      </button>\r\n    </mat-list-item>\r\n  </mat-nav-list>\r\n  "
+module.exports = "<mat-nav-list>\n    <a *ngIf=\"!authService.userLoggedIn\" class=\"highlighed\" mat-list-item routerLink=\"/login\" (click)=\"onClose()\">\n      <mat-icon>input</mat-icon>\n      <span class=\"nav-caption\">Zaloguj się</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/favorite\" (click)=\"onClose()\">\n      <mat-icon class=\"favorite-icon\">star</mat-icon>\n      <span class=\"nav-caption\">Ulubione</span>\n    </a>\n    <a *ngIf=\"authService.userLoggedIn\" mat-list-item routerLink=\"/history\" (click)=\"onClose()\">\n      <mat-icon>history</mat-icon>\n      <span class=\"nav-caption\">Historia</span>\n    </a>\n    <a mat-list-item routerLink=\"/feedback\" (click)=\"onClose()\">\n      <mat-icon class=\"feedback-icon\">feedback</mat-icon>\n      <span class=\"nav-caption\">Opinie</span>\n    </a>\n    <a mat-list-item routerLink=\"/help\" (click)=\"onClose()\">\n      <mat-icon class=\"info-icon\">info</mat-icon>\n      <span class=\"nav-caption\">Potrzebujesz pomocy?</span>\n    </a>\n    <mat-list-item *ngIf=\"authService.userLoggedIn\" class= \"highlighed\" (click)=\"onLogout()\">\n      <button mat-icon-button >\n        <mat-icon>reply</mat-icon>\n        <span class=\"nav-caption\">Wyloguj się</span>\n      </button>\n    </mat-list-item>\n  </mat-nav-list>\n  "
 
 /***/ }),
 
@@ -946,7 +946,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  page-not-found works!\r\n</p>\r\n"
+module.exports = "<p>\n  page-not-found works!\n</p>\n"
 
 /***/ }),
 
@@ -1567,7 +1567,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\app\sportal\src\main\web\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\ASUS\Desktop\Sportal\src\main\web\src\main.ts */"./src/main.ts");
 
 
 /***/ })
