@@ -2,12 +2,11 @@ package pl.sportal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import java.security.Principal;
-import java.util.Collections;
-import java.util.Map;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import pl.sportal.controller.config.CustomRestControllerAnnotation;
 import pl.sportal.entity.ApplicationUser;
 
 

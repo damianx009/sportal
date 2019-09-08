@@ -1,4 +1,4 @@
-package pl.sportal.controller;
+package pl.sportal.controller.config;
 
 
 import java.lang.annotation.ElementType;

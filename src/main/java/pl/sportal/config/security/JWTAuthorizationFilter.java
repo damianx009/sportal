@@ -13,9 +13,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import static pl.sportal.config.security.SecurityConstants.HEADER_STRING;
@@ -64,7 +63,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                                      .verify(token.replace(TOKEN_PREFIX, ""))
                                      .getClaim("roles").asString();
 
-            final Collection authorities =
+            final List<SimpleGrantedAuthority> authorities =
                     Arrays.stream(roles.split(","))
                             .map(SimpleGrantedAuthority::new)
                             .collect(Collectors.toList());
